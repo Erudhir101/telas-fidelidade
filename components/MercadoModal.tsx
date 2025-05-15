@@ -1,14 +1,14 @@
+import { AntDesign } from "@expo/vector-icons";
 import React, { useEffect } from "react";
 import {
+  Animated,
   Modal,
-  View,
+  StyleSheet,
   Text,
   TouchableOpacity,
-  StyleSheet,
-  Animated,
+  View,
 } from "react-native";
 import PhoneIllustration from "../assets/images/PhoneIllustration";
-import { AntDesign } from "@expo/vector-icons";
 
 interface MercadoPagoModalProps {
   visible: boolean;
@@ -65,17 +65,18 @@ const MercadoPagoModal: React.FC<MercadoPagoModalProps> = ({
             <AntDesign name="close" size={24} color="#000000" />
           </TouchableOpacity>
 
-          <View style={styles.illustrationContainer}>
-            <PhoneIllustration />
+          <View style={{ gap: 24, alignItems: "center" }}>
+            <View style={styles.illustrationContainer}>
+              <PhoneIllustration />
+            </View>
+
+            <Text style={styles.title}>
+              Peça seu Cartão de Crédito Mercado Pago e aproveite essas vantagens exclusivas:
+              <Text style={styles.emoji}>{"  "}🛒✨</Text>
+            </Text>
           </View>
 
           <View style={styles.benefitsContainer}>
-            <Text style={styles.title}>
-              Peça seu Cartão de Crédito Mercado Pago e aproveite essas
-              vantagens exclusivas:
-              <Text style={styles.emoji}>{"  "}🛒✨</Text>
-            </Text>
-
             <View style={styles.benefitItem}>
               <Text style={styles.benefitText}>
                 - Parcele suas compras em até
@@ -107,7 +108,6 @@ const MercadoPagoModal: React.FC<MercadoPagoModalProps> = ({
             style={styles.applyButton}
             activeOpacity={0.8}
             onPress={() => {
-              // Handle application button press
               onClose();
             }}
           >
@@ -142,7 +142,8 @@ const styles = StyleSheet.create({
   },
   illustrationContainer: {
     height: 100,
-    marginTop: 64,
+    marginTop: 32,
+    marginBottom: 40,
     alignItems: "center",
     justifyContent: "center",
   },
@@ -150,7 +151,8 @@ const styles = StyleSheet.create({
     fontSize: 26,
     fontWeight: "500",
     textAlign: "center",
-    marginBottom: 40,
+    marginTop: 40,
+    marginBottom: 30,
     lineHeight: 24,
     paddingHorizontal: 8,
   },
@@ -159,7 +161,7 @@ const styles = StyleSheet.create({
   },
   benefitsContainer: {
     width: "100%",
-    marginBottom: 96,
+    marginBottom: 40,
     paddingHorizontal: 9,
     gap: 20,
   },
