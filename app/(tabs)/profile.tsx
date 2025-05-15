@@ -1,8 +1,8 @@
-import { View, ScrollView, StyleSheet } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { ProfileHeader } from "@/components/profile/ProfileHeader";
 import { MenuSection } from "@/components/profile/MenuSection";
+import { ProfileHeader } from "@/components/profile/ProfileHeader";
 import { menuItems } from "@/constants/menuItems";
+import { ScrollView, StyleSheet, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function ProfileScreen() {
   return (
@@ -21,8 +21,8 @@ export default function ProfileScreen() {
             <MenuSection
               key={index}
               items={section}
-              isLast={index === menuItems.length - 1}
-            />
+              isSecureDeliverySection={index === 0}            
+              />
           ))}
         </View>
       </ScrollView>
@@ -33,13 +33,13 @@ export default function ProfileScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#cacaca",
+    backgroundColor: "white",
+    alignItems: "stretch",
   },
   scrollView: {
     flex: 1,
   },
   menuContainer: {
-    paddingHorizontal: 16,
-    paddingBottom: 24,
+    paddingBottom: 0,
   },
 });

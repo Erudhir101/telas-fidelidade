@@ -1,17 +1,22 @@
-import { View, StyleSheet } from "react-native";
-import { MenuItem } from "@/components/profile/MenuItem";
-import { MenuItemType } from "@/types/menu";
+import { MenuItem } from '@/components/profile/MenuItem';
+import { MenuItemType } from '@/types/menu';
+import { StyleSheet, View } from 'react-native';
 
 type MenuSectionProps = {
   items: MenuItemType[];
-  isFirst?: boolean;
+  isLast?: boolean;
+  isSecureDeliverySection?: boolean;
 };
 
-export function MenuSection({ items, isFirst = false }: MenuSectionProps) {
+export function MenuSection({ items, isLast = false, isSecureDeliverySection = false }: MenuSectionProps) {
   return (
-    <View style={[styles.container, isFirst && styles.firstItem]}>
+    <View style={[styles.container, isLast && styles.lastSection]}>
       {items.map((item, index) => (
-        <MenuItem key={index} item={item} />
+        <MenuItem 
+          key={index} 
+          item={item} 
+          isSecureDelivery={isSecureDeliverySection}
+        />
       ))}
     </View>
   );
@@ -19,9 +24,9 @@ export function MenuSection({ items, isFirst = false }: MenuSectionProps) {
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 24,
+    marginBottom: 0,
   },
-  firstItem: {
-    backgroundColor: "#cacaca",
+  lastSection: {
+    marginBottom: 0,
   },
 });
