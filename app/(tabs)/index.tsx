@@ -63,10 +63,10 @@ export default function HomeScreen() {
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: "#A1CEDC", dark: "#1D3D47" }}
+      headerBackgroundColor={{ light: "#fafafa", dark: "#101010" }}
       headerImage={
         <Image
-          source={require("@/assets/images/partial-react-logo.png")}
+          source={require("@/assets/images/bannerBolos.png")}
           style={styles.reactLogo}
         />
       }
@@ -198,8 +198,8 @@ const styles = StyleSheet.create({
   cardTitle: { fontSize: 18, fontWeight: 600 },
   cardSubtitle: { fontSize: 14, fontWeight: 500, opacity: 0.35 },
   reactLogo: {
-    height: 178,
-    width: 290,
+    height: 210,
+    width: 415,
     bottom: 0,
     left: 0,
     position: "absolute",
