@@ -1,4 +1,5 @@
 import { FontAwesome } from "@expo/vector-icons";
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 type ProfileHeaderProps = {
@@ -21,6 +22,9 @@ export function ProfileHeader({ name, phoneNumber }: ProfileHeaderProps) {
           <FontAwesome name="phone" size={18} color="#E8053C" />
           <Text style={styles.phoneText}>{phoneNumber}</Text>
         </TouchableOpacity>
+      </View>
+      <View style={{position: "absolute", right: 18, top: 1}}>
+      <MaterialCommunityIcons name="qrcode-scan" size={24} color="red"/>
       </View>
     </View>
   );
